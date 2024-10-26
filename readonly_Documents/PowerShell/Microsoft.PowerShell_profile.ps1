@@ -2,4 +2,4 @@ oh-my-posh --config https://raw.githubusercontent.com/Joniator/dotfiles/refs/hea
 
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
-. ~/.config/pwsh/alias.ps1
+. ~/Documents/PowerShell/alias.ps1

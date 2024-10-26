@@ -1,8 +1,27 @@
-winget install -e --id KeePassXCTeam.KeePassXC
-winget install -e --id Microsoft.PowerShell
-winget install -e --id JanDeDobbeleer.OhMyPosh
-winget install -e --id twpayne.chezmoi
-winget install -e --id ajeetdsouza.zoxide 
-winget install -e --id eza-community.eza
-winget install -e --id GnuWin32.Make
-winget install -e --id Git.Git
+function install {
+    param([string[]] $ids)
+    foreach ($id in $ids) {
+        winget install -e --id $id
+    }
+}
+
+install @(
+    # Shell
+    "Microsoft.PowerShell",
+    "JanDeDobbeleer.OhMyPosh",
+    "twpayne.chezmoi",
+
+    # CLI Utils
+    "ajeetdsouza.zoxide",
+    "eza-community.eza",
+    "junegunn.fzf",
+
+    # CLI Tools
+    "GnuWin32.Make",
+    "Git.Git",
+
+    # Apps
+    "KeePassXCTeam.KeePassXC",
+    "Doist.Todoist",
+    "Microsoft.PowerToys"
+)
