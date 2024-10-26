@@ -8,15 +8,15 @@ function l {
 } 
 function la {
     param($path)
-    eza -a $path
+    eza -lha $path
 }
 function ld {
     param($path)
-    eza -D $path
+    eza -lhaD $path
 }
 function lf   {
     param($path)
-    eza -f $path
+    eza -lhaf $path
 }
 
 function psreload { . ~\Documents\PowerShell\Microsoft.PowerShell_profile.ps1 }

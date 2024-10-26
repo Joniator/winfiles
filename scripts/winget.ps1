@@ -20,6 +20,9 @@ install @(
     "GnuWin32.Make",
     "Git.Git",
 
+    # Languages
+    "Amazon.Corretto.19",
+
     # Apps
     "KeePassXCTeam.KeePassXC",
     "Doist.Todoist",

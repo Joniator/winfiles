@@ -11,6 +11,8 @@ function install {
 }
 
 install @(
-    neovim,
-    gcc,
+    "neovim",
+    "gcc",
+    "bat",
+    "neovide"
 )
