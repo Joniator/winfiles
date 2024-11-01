@@ -1,5 +1,5 @@
 if not vim.g.neovide then
-    return
+	return
 end
 
 vim.o.guifont = "ComicCodeLigatures Nerd Font,BigBlueTermPlus Nerd Font,Cascadia Code"

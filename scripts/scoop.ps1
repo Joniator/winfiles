@@ -10,6 +10,8 @@ function install {
     }
 }
 
+scoop bucket add extras
+
 install @(
     "neovim",
     "gcc",
