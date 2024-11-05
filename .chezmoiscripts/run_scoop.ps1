@@ -16,5 +16,7 @@ install @(
     "neovim",
     "gcc",
     "bat",
-    "neovide"
+    "neovide",
+    "jq",
+    "maven"
 )

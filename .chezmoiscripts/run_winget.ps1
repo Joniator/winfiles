@@ -10,6 +10,7 @@ install @(
     "Microsoft.PowerShell",
     "JanDeDobbeleer.OhMyPosh",
     "twpayne.chezmoi",
+    "wez.wezterm",
 
     # CLI Utils
     "ajeetdsouza.zoxide",
