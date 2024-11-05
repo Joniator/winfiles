@@ -6,7 +6,6 @@ local home = os.getenv("USERPROFILE") or os.getenv("HOME") or "~"
 local resize_small = 1
 local resize_big = 15
 local key_timeout = 1000
-
 local function set_keymap(name)
 	return act.ActivateKeyTable({
 		name = name,
@@ -91,6 +90,7 @@ config.keys = {
 	{ key = "r", mods = "LEADER", action = set_keymap("resize_pane") },
 	{ key = "a", mods = "LEADER", action = set_keymap("activate_pane") },
 	{ key = "Space", mods = "LEADER", action = act.RotatePanes("Clockwise") },
+	{ key = "Space", mods = "CTRL", action = act.SendKey({ key = " ", mods = "CTRL" }) },
 }
 
 config.key_tables = {
