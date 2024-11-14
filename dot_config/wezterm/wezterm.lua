@@ -26,8 +26,15 @@ local function generate_tab_table()
 	return keys
 end
 
-config.default_prog = { "pwsh.exe" }
+config.default_prog = { "pwsh.exe -NoLogo" }
 config.default_cwd = "~"
+
+config.launch_menu = {
+	{
+		label = "Powershell",
+		args = { "pwsh.exe -NoLogo" },
+	},
+}
 
 --[
 -- Appearance
