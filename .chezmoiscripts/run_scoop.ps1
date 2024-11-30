@@ -18,5 +18,6 @@ install @(
     "bat",
     "neovide",
     "jq",
-    "maven"
+    "maven",
+    "task"
 )
