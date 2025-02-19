@@ -19,7 +19,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- Keep signcolumn on by default
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 
 -- Decrease update time
 opt.updatetime = 250
@@ -33,10 +33,10 @@ opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 opt.list = true
-opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
-opt.inccommand = 'split'
+opt.inccommand = "split"
 
 -- Show which line your cursor is on
 opt.cursorline = true
@@ -50,9 +50,17 @@ opt.termguicolors = true
 opt.hlsearch = true
 
 local function get_titlestring()
-  local ssh = os.getenv 'SSH_CONNECTION' and 'ssh :: ' or ''
-  local user = os.getenv 'USER' or os.getenv 'USERNAME' or ''
-  return ssh .. user .. '@' .. vim.fn.hostname() .. ' :: nvim :: ' .. vim.fn.getcwd() .. ' :: %F'
+	local ssh = os.getenv("SSH_CONNECTION") and "ssh :: " or ""
+	local user = os.getenv("USER") or os.getenv("USERNAME") or ""
+	return ssh .. user .. "@" .. vim.fn.hostname() .. " :: nvim :: " .. vim.fn.getcwd() .. " :: %F"
 end
 opt.title = true
 opt.titlestring = get_titlestring()
+
+vim.cmd([[
+let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
+let &shellcmdflag = '-NoLogo -NonInteractive -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';$PSStyle.OutputRendering=''plaintext'';Remove-Alias -Force -ErrorAction SilentlyContinue tee;'
+let &shellredir = '2>&1 | %%{ "$_" } | Out-File %s; exit $LastExitCode'
+let &shellpipe  = '2>&1 | %%{ "$_" } | tee %s; exit $LastExitCode'
+set shellquote= shellxquote=
+]])
