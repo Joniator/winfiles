@@ -36,6 +36,7 @@ return {
 			pcall(require("telescope").load_extension, "ui-select")
 			pcall(require("telescope").load_extension, "http")
 			pcall(require("telescope").load_extension, "emoji")
+			pcall(require("telescope").load_extenseion, "project_picker")
 
 			local builtin = require("telescope.builtin")
 			local map = vim.keymap.set
@@ -57,6 +58,9 @@ return {
 			map("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
 			map("n", "<leader>sE", require("telescope").extensions.emoji.emoji, { desc = "[S]earch [E]moji" })
 			map("n", "<leader>sH", require("telescope").extensions.http.list, { desc = "[S]earch [H]ttp" })
+			map("n", "<leader>sp", function()
+				require("telescope").extensions.project_picker.project_picker("C:\\dev")
+			end, { desc = "[S]earch [p]rojects" })
 
 			map("n", "<leader>/", function()
 				builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({

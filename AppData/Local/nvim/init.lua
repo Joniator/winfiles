@@ -44,10 +44,6 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ import = "jonnyb/plugins" }, {
-	dev = {
-		path = "~/Projects/",
-	},
-})
+require("lazy").setup({ import = "jonnyb/plugins" })
 
 -- vim: ts=2 sts=2 sw=2 et

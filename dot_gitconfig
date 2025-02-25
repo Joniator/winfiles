@@ -1,0 +1,58 @@
+[branch]
+    sort = -committerdate
+
+[column]
+    ui = auto
+
+[commit]
+    verbose = true
+    gpgsign = true
+
+[core]
+    autoclrf = false
+
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+
+[gpg]
+    program = C:\\Users\\boeckj\\scoop\\apps\\gpg\\current\\bin\\gpg2.exe
+
+[help]
+    autocorrect = prompt
+
+[http]
+    sslVerify = false
+
+[init]
+    defaultBranch = main
+
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[tag]
+    sort = version:refname
+
+[user]
+    signingkey = 5BF4F9E32EA6ED6411D867615FD734350C08DA1B
+    name = Jonathan Boeckel
+    email = jonathan.boeckel@msg.group
+
